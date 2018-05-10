@@ -35,7 +35,7 @@ public class TowerDefenceGame {
     }
 
     public TowerDefenceGame() {
-        this.userInfo = new UserInfo(200, 32);
+        this.userInfo = new UserInfo(350, 32);
         this.map = new Map(this);
         this.monsterEmitter = new MonsterEmitter(this, 40);
         this.turretEmitter = new TurretEmitter(this);

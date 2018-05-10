@@ -10,7 +10,7 @@ import ru.geekbrains.tatun.map.*;
 import ru.geekbrains.tatun.util.Assets;
 
 public class Monster {
-    private final int hpMax = 4;
+    private final int hpMax = 3;
 
     private TextureRegion texture;
     private TextureRegion textureHp;
