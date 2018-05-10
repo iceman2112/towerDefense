@@ -10,8 +10,7 @@ import ru.geekbrains.tatun.map.*;
 import ru.geekbrains.tatun.util.Assets;
 
 public class Turret {
-    private TextureRegion textureL1;
-    private TextureRegion textureL2;
+    private TextureRegion[] texture;
 
     private final TowerDefenceGame game;
 
@@ -37,8 +36,8 @@ public class Turret {
         this.fireDelay = 1.0F;
 
         TextureAtlas atlas = Assets.getInstance().getAtlas();
-        this.textureL1  = atlas.findRegion("turret");
-        this.textureL2 = atlas.findRegion("turretL2");
+
+        this.texture  = new TextureRegion(atlas.findRegion("turrets")).split(80, 80)[0];
     }
 
     public Vector2 getPosition() { return position; }
@@ -46,8 +45,8 @@ public class Turret {
     public void render(SpriteBatch batch) {
         Vector2 displayPosition = Map.convertMapToDisplay(position);
 
-        TextureRegion texture = (lever == 1 ? textureL1 : textureL2);
-        batch.draw(texture, displayPosition.x, displayPosition.y, texture.getRegionWidth() / 2, texture.getRegionHeight() / 2, texture.getRegionWidth(), texture.getRegionHeight(), 1, 1,rotation );
+        //TextureRegion texture = (lever == 1 ? textureL1 : textureL2);
+        batch.draw(texture[lever - 1], displayPosition.x, displayPosition.y, 40, 40, 80, 80, 1, 1, rotation);
     }
 
     public boolean checkMonsterInRange(Monster monster) {

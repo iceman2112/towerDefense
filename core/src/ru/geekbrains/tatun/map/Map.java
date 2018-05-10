@@ -125,6 +125,7 @@ public class Map {
                 batch.draw(textureRoad, displayPosition.x, displayPosition.y);
                 break;
             case HOUSE_CODE:
+                batch.draw(textureRoad, displayPosition.x, displayPosition.y);
                 batch.draw(textureHouse, displayPosition.x, displayPosition.y);
                 housePosition = new Vector2(i, j);
                 break;
